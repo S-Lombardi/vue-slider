@@ -35,6 +35,15 @@ createApp({
 
         }
     },
+
+    created(){
+        //le immagini cambiano automaticamente dopo 3 secondi
+        this.scrollAutomatico = setInterval(() =>{
+            this.immagineSuccessiva()
+        },3000);
+
+    },
+
     methods: {
         //click pulsante in basso passo all'immagine sucessiva
         immagineSuccessiva() {
@@ -59,7 +68,7 @@ createApp({
         scegliImmagine(index){
             this.immagineAttiva = index;
         
-        }
+        },
 
 
     }
