@@ -32,8 +32,8 @@
                     <div class="next" @click="immagineSuccessiva" ></div>
                     <!-- FINE PULSANTI -->
                     
-                    <div class="thumb" v-for="(item, index) in slides"  :class="immagineAttiva === index ? 'active' : ''" >
-                        <img  :src="item.image"/>
+                    <div class="thumb" v-for="(item, index) in slides"  :class="immagineAttiva === index ? 'active' : ''">
+                        <img  :src="item.image" @click="scegliImmagine(index)" />
                     </div>
                  
                 </div>

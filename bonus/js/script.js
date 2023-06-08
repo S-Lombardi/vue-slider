@@ -36,6 +36,7 @@ createApp({
         }
     },
     methods: {
+        //click pulsante in basso passo all'immagine sucessiva
         immagineSuccessiva() {
             if (this.immagineAttiva < this.slides.length - 1) {
                 this.immagineAttiva++;
@@ -44,7 +45,7 @@ createApp({
                 this.immagineAttiva = 0;
             }
         },
-        
+        //click pulsante in alto passo all'immagine precedente
         immaginePrecedente() {
             if (this.immagineAttiva > 0) {
                 this.immagineAttiva--;
@@ -52,8 +53,13 @@ createApp({
             } else {
                 this.immagineAttiva = this.slides.length - 1;
             }
-            
         },
+
+        //al click su una thumb visualizzo in grande l'immagine corrispondente
+        scegliImmagine(index){
+            this.immagineAttiva = index;
+        
+        }
 
 
     }
