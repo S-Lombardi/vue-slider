@@ -37,10 +37,8 @@ createApp({
     },
 
     created(){
-        //le immagini cambiano automaticamente dopo 3 secondi
-        this.scrollAutomatico = setInterval(() =>{
-            this.immagineSuccessiva()
-        },3000);
+        //riutilizzo la funzione per lo scroll automatico
+        this.startAutoscroll()
 
     },
 
@@ -69,6 +67,19 @@ createApp({
             this.immagineAttiva = index;
         
         },
+        
+        //fermo lo scroll automatico
+        stopAutoscroll(){
+            clearInterval(this.scrollAutomatico);
+        },
+
+        //attivo lo scroll automatico ogni 3 secondi
+        startAutoscroll(){
+            this.scrollAutomatico = setInterval(() =>{
+                this.immagineSuccessiva()
+            },3000);
+    
+        }
 
 
     }
